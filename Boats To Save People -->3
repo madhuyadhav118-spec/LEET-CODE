@@ -1,0 +1,21 @@
+import java.util.*;
+class Solution {
+    public int numRescueBoats(int[] people, int limit) {
+        Arrays.sort(people);
+        int c=0;
+        int f=0;
+      int r = people.length-1;
+     while(f<=r){
+         if(people[f]+people[r]<=limit){
+             c++;
+             f++;
+             r--;
+         }else if(people[r]<=limit){
+            c++;
+             r--;
+         }
+      }
+        return c;
+        
+    }
+}
