@@ -1,0 +1,18 @@
+class Solution {
+    public double myPow(double x, int n) {
+    //    double sum =1;
+    //    double sum1 =1;
+    //    if(n<0){
+    //     for(int i=n;i<0;i++){
+    //         sum1 = sum1*x;
+    //     }
+    //     return sum/sum1; 
+
+    //    }
+    //     for(int i=1;i<=n;i++){
+    //         sum = sum*x;
+    //     }
+    //     return sum;
+    return Math.pow(x,n);
+    }
+}
