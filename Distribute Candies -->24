@@ -1,0 +1,20 @@
+class Solution {
+    public int distributeCandies(int[] candyType) {
+        HashSet<Integer> set = new HashSet<>();
+        int n = candyType.length;
+        int limit = n/2;
+        for(int type:candyType){
+            set.add(type);
+        }
+        int size = set.size();
+        if(limit<=size || limit==size){
+            return limit;
+        }else if(limit>size){
+            return  size;
+        }else{
+            return limit -size;
+        }
+        // return Math.min(size,limit);
+        
+    }
+}
