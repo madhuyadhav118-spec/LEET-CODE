@@ -1,0 +1,19 @@
+class Solution {
+    public int dominantIndex(int[] nums) {
+        int maxIndex = 0;
+        int largest = nums[0];
+        for(int i =1; i<nums.length;i++){
+            if(largest<nums[i]){
+            largest = Math.max(largest,nums[i]);
+            maxIndex = i;
+            }
+        }
+        for(int num: nums){
+            if(num!=largest && largest<2*num){
+                return -1;
+
+            }
+        }
+        return maxIndex;
+    }
+}
