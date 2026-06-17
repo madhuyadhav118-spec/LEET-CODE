@@ -1,0 +1,27 @@
+class Solution {
+    public int maxDistance(int[] colors) {
+        int n = colors.length;
+        int max1 = 0;
+        int max2 = 0;
+        int l1= 1;
+        int r1= n-1;
+        int start = 0;
+        int end = n-1;
+        int l2 = 0;
+        int r2 = n-2;
+
+        while(l1 <= r1){
+            if(colors[start]!=colors[l1]){
+                max1 = Math.max(max1,Math.abs(start - l1));
+            }
+            l1++;
+        }
+        while(r2 >= l2){
+            if(colors[end]!=colors[r2]){
+                max2 = Math.max(max2,Math.abs(end-r2));
+            }
+            r2--;
+        }
+        return Math.max(max1,max2);
+    }
+}
