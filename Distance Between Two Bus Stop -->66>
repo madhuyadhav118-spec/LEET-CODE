@@ -1,0 +1,18 @@
+class Solution {
+    public int distanceBetweenBusStops(int[] distance, int start, int destination) {
+        int n = distance.length;;
+        int totalSum = 0;
+        int circular = 0;
+        int countCircular = 0;
+        for(int dis:distance){
+            totalSum+=dis;
+        }
+        int i= start;
+        while(i!=destination){
+            circular+=distance[i];
+            i = (i+1)%n;//wrap around
+        }
+        countCircular=totalSum-circular;
+        return Math.min(circular,countCircular);
+    }
+}
