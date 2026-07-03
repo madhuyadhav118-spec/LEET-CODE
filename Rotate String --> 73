@@ -1,0 +1,22 @@
+class Solution {
+    public boolean rotateString(String s, String goal) {
+            // k = k % s.length();
+            // k = (full cycles) + (remaining rotations)
+
+            //Left Rotation
+            // String s = "abcd";
+            // int k = 2;
+            // String result = s.substring(k) + s.substring(0, k);
+            // System.out.println(result); // cdab
+
+            //Right Rotation
+            //String s = "abcd";
+            // int k = 2;
+           
+            // int n = s.length();
+            // String result = s.substring(n - k) + s.substring(0, n - k);
+            // System.out.println(result); // cdab
+        boolean rotate = (s.length()==goal.length() && (s+s).contains(goal));
+        return rotate;
+    }
+}
