@@ -1,0 +1,34 @@
+class Solution {
+    public int findDuplicate(int[] nums) {
+        for(int i=0;i<nums.length;i++){
+            int idx = Math.abs(nums[i]);
+            if(nums[idx] < 0){
+                return idx;
+            }else{
+                nums[idx]=-nums[idx];
+            }
+        }
+        return 0;
+    }
+}
+// public void findDuplicates(int[] arr) {
+//     int i = 0;
+
+//     while (i < arr.length) {
+//         int correct = arr[i] - 1;
+
+//         if (arr[i] != arr[correct]) {
+//             int temp = arr[i];
+//             arr[i] = arr[correct];
+//             arr[correct] = temp;
+//         } else {
+//             i++;
+//         }
+//     }
+
+//     for (i = 0; i < arr.length; i++) {
+//         if (arr[i] != i + 1) {
+//             System.out.println("Duplicate: " + arr[i]);
+//         }
+//     }
+// }
