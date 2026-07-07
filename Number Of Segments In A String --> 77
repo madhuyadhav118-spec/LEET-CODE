@@ -1,0 +1,16 @@
+class Solution {
+    public int countSegments(String s) {
+        // Trim leading and trailing whitespace first
+        String trimmed = s.trim();
+        
+        // If the string is empty after trimming, there are no segments
+        if (trimmed.equals("")) {
+            return 0;
+        }
+        
+        // "\\s+" matches one or more whitespace characters
+        return trimmed.split("\\s+").length;
+    
+
+    }
+}
