@@ -1,0 +1,25 @@
+class Solution {
+    public boolean isGood(int[] nums) {
+        int n = nums.length;
+        HashMap<Integer,Integer> map = new HashMap<>();
+        for(int b : nums){
+            map.put(b,map.getOrDefault(b,0)+1);
+        }
+        int max = 0;
+        for(int a : nums){
+            max = Math.max(max,a);
+        }
+        for(int c : nums){
+            if(map.get(c)>1 && c!=max){
+                return false;
+            }
+        }
+
+        if(n==max+1 && map.get(max)==2){
+            return true;
+        } else {
+            return false;
+        }
+        
+    }
+}
