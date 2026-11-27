@@ -1,0 +1,46 @@
+// class Solution {
+//     public int maxScore(int[] cardPoints, int k) {
+//         int n = cardPoints.length;
+//         int leftSum =0;
+//         int rightSum =0;
+//         // int sum =0;
+//         // int maxSum =0;
+//         for(int i =0;i < k;i++){
+//             leftSum += cardPoints[i];
+//             sum = leftSum;
+//         }
+//         int maxSum = leftSum;
+//         int rightIndex = n-1;
+//         for(int i = k-1 ;i>=0; i--){
+//             leftSum -= cardPoints[i];
+//             rightSum += cardPoints[rightIndex];
+//             rightIndex--;
+//             maxSum = Math.max(maxSum,leftSum+rightSum);
+//         }
+//         return maxSum;
+//     }
+// }
+
+class Solution {
+    public int maxScore(int[] cardPoints, int k) {
+        int n = cardPoints.length;
+        int leftSum = 0;
+        int rightSum = 0;
+
+        for (int i = 0; i < k; i++) {
+            leftSum += cardPoints[i];
+        }
+
+        int maxSum = leftSum;
+        int rightIndex = n - 1;
+
+        for (int i = k - 1; i >= 0; i--) {
+            leftSum -= cardPoints[i];
+            rightSum += cardPoints[rightIndex];
+            rightIndex--;
+            maxSum = Math.max(maxSum, leftSum + rightSum);
+        }
+
+        return maxSum;
+    }
+}
